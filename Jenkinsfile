@@ -4,6 +4,7 @@ pipeline {
     }
 
     stages {
+
         stage('Hello') {
             steps {
                 echo 'Hello Jenkins'
@@ -14,6 +15,17 @@ pipeline {
             steps {
                 echo 'Hello Jenkins Second'
             }
+        }
+
+    }
+
+    post {
+        success {
+            echo 'Pipeline Pass'
+        }
+
+        failure {
+            echo 'Pipeline Failed'
         }
     }
 }
